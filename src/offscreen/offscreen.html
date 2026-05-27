@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>AgentDebate Runner</title>
+    <style>
+      html,
+      body {
+        width: 1px;
+        height: 1px;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      iframe {
+        width: 420px;
+        height: 720px;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="agentFrameHost" aria-hidden="true"></div>
+    <script src="../providerConfig.js"></script>
+    <script src="../debateFlowConfig.js"></script>
+    <script src="./offscreen.js"></script>
+  </body>
+</html>

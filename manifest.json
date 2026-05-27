@@ -1,0 +1,72 @@
+{
+  "manifest_version": 3,
+  "name": "AgentDebate",
+  "version": "0.1.0",
+  "description": "AI debate orchestrator across multiple logged-in AI web apps.",
+  "permissions": [
+    "activeTab",
+    "declarativeNetRequest",
+    "offscreen",
+    "sidePanel",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://kimi.com/*",
+    "https://www.kimi.com/*",
+    "https://doubao.com/*",
+    "https://www.doubao.com/*",
+    "https://chat.deepseek.com/*",
+    "https://chat.qwen.ai/*",
+    "https://qwen.ai/*",
+    "https://qianwen.com/*",
+    "https://tongyi.aliyun.com/*",
+    "https://www.qianwen.com/*"
+  ],
+  "action": {
+    "default_title": "AgentDebate"
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; frame-src 'self' https://chatgpt.com https://kimi.com https://www.kimi.com https://doubao.com https://www.doubao.com https://chat.deepseek.com https://chat.qwen.ai https://qwen.ai https://qianwen.com https://www.qianwen.com https://tongyi.aliyun.com;"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "agent_frame_rules",
+        "enabled": true,
+        "path": "config/rules.json"
+      }
+    ]
+  },
+  "side_panel": {
+    "default_path": "src/sidepanel/sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://kimi.com/*",
+        "https://www.kimi.com/*",
+        "https://doubao.com/*",
+        "https://www.doubao.com/*",
+        "https://chat.deepseek.com/*",
+        "https://chat.qwen.ai/*",
+        "https://qwen.ai/*",
+        "https://qianwen.com/*",
+        "https://tongyi.aliyun.com/*",
+        "https://www.qianwen.com/*"
+      ],
+      "js": [
+        "src/providerConfig.js",
+        "src/content/agentAdapter.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_start"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AgentDebate</title>
+    <link rel="stylesheet" href="./sidepanel.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">AD</span>
+          <div>
+            <h1>AgentDebate</h1>
+            <p>结构化辩论室</p>
+          </div>
+        </div>
+        <button class="icon-button" id="clearButton" type="button" title="清空" aria-label="清空记录">清空</button>
+      </header>
+
+      <section class="agents" id="agentsList" aria-label="Agents"></section>
+
+      <section class="roles" aria-label="辩论角色">
+        <div class="section-title">流程与角色</div>
+        <label class="flow-picker hidden" id="flowPicker">
+          <span>辩论流程</span>
+          <select id="debateFlowSelect"></select>
+        </label>
+        <div class="role-grid" id="roleAssignments"></div>
+      </section>
+
+      <section class="thread" id="thread" aria-live="polite"></section>
+
+      <form class="composer" id="composer">
+        <textarea id="promptInput" rows="3" placeholder="输入辩题，例如：AgentDebate 应该增加辩论轮次自定义吗？"></textarea>
+        <div class="composer-actions">
+          <button class="primary-button" type="submit">开始辩论</button>
+        </div>
+      </form>
+      <div class="agent-frame-host" id="agentFrameHost" aria-hidden="true"></div>
+    </main>
+    <script src="../providerConfig.js"></script>
+    <script src="../debateFlowConfig.js"></script>
+    <script src="./sidepanel.js"></script>
+  </body>
+</html>
