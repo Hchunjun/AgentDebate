@@ -18,21 +18,26 @@
     "https://www.kimi.com/*",
     "https://doubao.com/*",
     "https://www.doubao.com/*",
-    "https://chat.deepseek.com/*",
-    "https://chat.qwen.ai/*",
-    "https://qwen.ai/*",
-    "https://qianwen.com/*",
-    "https://tongyi.aliyun.com/*",
-    "https://www.qianwen.com/*"
+    "https://chat.deepseek.com/*"
   ],
   "action": {
-    "default_title": "AgentDebate"
+    "default_title": "AgentDebate",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
   },
   "background": {
     "service_worker": "src/background.js"
   },
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'; frame-src 'self' https://chatgpt.com https://kimi.com https://www.kimi.com https://doubao.com https://www.doubao.com https://chat.deepseek.com https://chat.qwen.ai https://qwen.ai https://qianwen.com https://www.qianwen.com https://tongyi.aliyun.com;"
+    "extension_pages": "script-src 'self'; object-src 'self'; frame-src 'self' https://chatgpt.com https://kimi.com https://www.kimi.com https://doubao.com https://www.doubao.com https://chat.deepseek.com;"
   },
   "declarative_net_request": {
     "rule_resources": [
@@ -54,12 +59,7 @@
         "https://www.kimi.com/*",
         "https://doubao.com/*",
         "https://www.doubao.com/*",
-        "https://chat.deepseek.com/*",
-        "https://chat.qwen.ai/*",
-        "https://qwen.ai/*",
-        "https://qianwen.com/*",
-        "https://tongyi.aliyun.com/*",
-        "https://www.qianwen.com/*"
+        "https://chat.deepseek.com/*"
       ],
       "js": [
         "src/providerConfig.js",
